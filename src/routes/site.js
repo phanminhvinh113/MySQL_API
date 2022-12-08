@@ -4,4 +4,6 @@ const router = express.Router()
 
 router.get('/',homeController.homePage)
 router.get('/news',homeController.newPage)
+router.get('/user',homeController.userPage)
+
 module.exports = router
