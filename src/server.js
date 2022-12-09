@@ -1,37 +1,32 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import dotenv from 'dotenv'
-import viewEngine from './config/viewEngine.js'
-import initWebRoutes from './routes/web.js'
-import morgan from 'morgan'
-import connectDB from './config/connectDB.js'
+import express from "express";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import viewEngine from "./config/viewEngine.js";
+import initWebRoutes from "./routes/web.js";
+import morgan from "morgan";
+import connectDB from "./config/connectDB.js";
+import methodOverride from "method-override";
 //
-dotenv.config()
+dotenv.config();
 
 //
-const app = express()
+const app = express();
 
 //PORT
-const port = process.env.PORT || 8081
-//
-
+const port = process.env.PORT || 8081;
+//methodOverride
+app.use(methodOverride("_method"));
 //config app
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(morgan('combined'))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan("combined"));
 
 //Connect db
-connectDB()
+connectDB();
 //
-viewEngine(app)
-initWebRoutes(app)
+viewEngine(app);
+initWebRoutes(app);
 
-
-
-app.listen(port,()=>{
-    console.log(`Server is running http://localhost:${port}`)
-})
-
-
-
-
+app.listen(port, () => {
+  console.log(`Server is running http://localhost:${port}`);
+});

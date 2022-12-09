@@ -10,6 +10,8 @@
   "author": "vinh",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
@@ -25,6 +27,7 @@
     "@babel/node": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "ejs": "^3.1.8",
+    "method-override": "^3.0.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.5.2"
   }

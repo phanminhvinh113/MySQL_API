@@ -9,17 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      key: {
+      currentNumber: {
+        type: Sequelize.INTEGER,
+      },
+      maxNumber: {
+        type: Sequelize.INTEGER,
+      },
+      date: {
+        type: Sequelize.DATE,
+      },
+      timeType: {
         type: Sequelize.STRING,
       },
-      type: {
-        type: Sequelize.STRING,
-      },
-      valueEN: {
-        type: Sequelize.STRING,
-      },
-      valueVI: {
-        type: Sequelize.STRING,
+      doctorId: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
